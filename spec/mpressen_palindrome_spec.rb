@@ -5,7 +5,7 @@ RSpec.describe MpressenPalindrome do
   end
 
   it "test non-palindrome" do
-    expect("apple".palindrome?).not_to eq true
+    expect("apple".palindrome?).to eq false
   end
 
   it "test literal palindrome" do
@@ -21,5 +21,13 @@ RSpec.describe MpressenPalindrome do
     expect("A man, a plan, a canal—Panama!".palindrome?).to eq true
   end
 	
+  it "test non-palindrome with integers" do
+    expect(12345.palindrome?).to eq false
+
+  end
+
+  it "test palindrome with integers" do
+    expect(12321.palindrome?).to eq true
+  end
 
 end
